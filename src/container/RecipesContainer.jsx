@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react"
 import RecipesList from "../components/RecipesList"
+import RecipeSelector from "../components/RecipeSelector"
+import RecipeDetail from "../components/RecipeDetail"
 
 const RecipesContainer = () => {
     const [recipes, setRecipes] = useState([])
+    const [selectedRecipe, setSelectedRecipe] = useState('')
 
     useEffect(() => {
         getRecipes()
@@ -14,8 +17,17 @@ const RecipesContainer = () => {
             .then(recipes => setRecipes(recipes))
     }
     
+    const onRecipeSelected = (recipe) => {
+        setSelectedRecipe(recipe)
+    }
+
     return (
         <>
+        <RecipeSelector recipes={recipes} onRecipeSelected={onRecipeSelected}/>
+        <hr></hr>
+        <div className = 'selected-recipe'>
+        {selectedRecipe ? <RecipeDetail selectedRecipe = {selectedRecipe}/> :null}
+        </div>
         <h3>All Recipes</h3>
         <div className = 'recipe-list-container'>
         {recipes ? <RecipesList recipes ={recipes}/> : null}

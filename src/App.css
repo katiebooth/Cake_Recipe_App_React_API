@@ -20,12 +20,8 @@ h3 {
 }
 
 img {
-  height: 60px;
-  width: 60px
-}
-
-li {
-  list-style: none;
+  height: 65px;
+  width: 65px
 }
 
 .recipe-list-container {
@@ -38,5 +34,21 @@ li {
 .individual-recipe {
   text-align: center;
   align-items: center;
-  width: 150px
+  width: 150px;
+  padding: 10px
+}
+
+select {
+  background-color: hotpink;
+  color: white;
+  width: 45%;
+  height: 25px;
+  margin-left: 5pt;
+  text-align: center;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 13pt;
+  border-radius: 15pt;
+  border: 2px solid darkmagenta;
+  font-weight: bold;
+
 }

@@ -7,7 +7,7 @@ const RecipesList = ({recipes}) => {
         return <Recipe recipe = {recipe} key = {index} />
     })
 
-    console.log(recipesList)
+    // console.log(recipesList)
 
     return (
         <>
