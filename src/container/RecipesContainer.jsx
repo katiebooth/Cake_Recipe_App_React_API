@@ -25,7 +25,7 @@ const RecipesContainer = () => {
         <>
         <RecipeSelector recipes={recipes} onRecipeSelected={onRecipeSelected}/>
         <hr></hr>
-        <div className = 'selected-recipe'>
+        <div>
         {selectedRecipe ? <RecipeDetail selectedRecipe = {selectedRecipe}/> :null}
         </div>
         <h3>All Recipes</h3>
