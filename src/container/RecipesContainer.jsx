@@ -8,6 +8,7 @@ const RecipesContainer = () => {
     const [recipes, setRecipes] = useState([])
     const [selectedRecipe, setSelectedRecipe] = useState('')
     const [savedRecipes, setSavedRecipes] = useState('')
+    const [savedRecipesInStorage, setSavedRecipesInStorage] = useState('')
 
     useEffect(() => {
         getRecipes()
@@ -29,7 +30,16 @@ const RecipesContainer = () => {
         setSavedRecipes(copySavedRecipes)
     }
 
-    console.log(savedRecipes)
+    localStorage.setItem('saved recipes list', JSON.stringify(savedRecipes))
+
+    useEffect(()=>{
+        const savedRecipesInStorage = JSON.parse(localStorage.getItem('saved recipes list'))
+        if (savedRecipesInStorage !== null) setSavedRecipesInStorage(savedRecipesInStorage)
+    }, [])
+
+    // console.log(savedRecipesInStorage)
+    // console.log(savedRecipes)
+
     return (
         <>
         <RecipeSelector recipes={recipes} onRecipeSelected={onRecipeSelected} />
@@ -38,8 +48,8 @@ const RecipesContainer = () => {
         {selectedRecipe ? <RecipeDetail selectedRecipe = {selectedRecipe} addToSavedRecipes = {addToSavedRecipes}/> :null}
         </div>
         <div className = 'recipes-container'>
-        {recipes ? <RecipesList recipes ={recipes}/> : null}
-        <SavedRecipeList savedRecipes = {savedRecipes}/>
+        {recipes ? <RecipesList recipes ={recipes} onRecipeSelected = {onRecipeSelected} addToSavedRecipes = {addToSavedRecipes}/> : null}
+        <SavedRecipeList savedRecipes = {savedRecipes} savedRecipesInStorage = {savedRecipesInStorage}/>
         </div>
         </>
     )

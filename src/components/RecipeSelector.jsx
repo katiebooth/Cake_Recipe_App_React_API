@@ -13,7 +13,7 @@ const RecipeSelector = ({recipes, onRecipeSelected}) => {
 
     return (
         <select defaultValue="" onChange={handleChange}>
-            <option value = "">Choose a recipe</option>
+            <option value = "">Select a recipe here or click on a recipe below to view instructions</option>
             {recipeOptions}
         </select>
     )

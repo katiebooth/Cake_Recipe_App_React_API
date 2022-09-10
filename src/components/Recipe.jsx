@@ -1,9 +1,12 @@
-const Recipe = ({recipe}) => {
+const Recipe = ({recipe, addToSavedRecipes, onRecipeSelected}) => {
     return (
-        <div className = 'individual-recipe'>
+        <button onClick={() => onRecipeSelected(recipe)} className = 'individual-recipe'>
             <img src={recipe.strMealThumb}></img>
             <p>{recipe.strMeal}</p>
-         </div>        
+            <p>
+            <button className = 'add-to-saved-button' onClick={() => addToSavedRecipes(recipe)}>Add To Saved Recipes</button>
+            </p>
+         </button>        
     )
 }
 

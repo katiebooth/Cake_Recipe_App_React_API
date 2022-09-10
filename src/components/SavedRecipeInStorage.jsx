@@ -1,4 +1,4 @@
-const SavedRecipe = ({recipe}) => {
+const SavedRecipeInStorage = ({recipe}) => {
 
     return <li>
         <a href = {recipe.strYoutube}>{recipe.strMeal}</a>
@@ -6,4 +6,4 @@ const SavedRecipe = ({recipe}) => {
     
 }
 
-export default SavedRecipe
+export default SavedRecipeInStorage
