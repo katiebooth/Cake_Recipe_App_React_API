@@ -17,6 +17,8 @@ h2 {
 
 h3 {
   margin-left: 18%;
+  width: 570px;
+  text-align: center;
 }
 
 img {
@@ -24,11 +26,22 @@ img {
   width: 65px
 }
 
+.recipes-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%
+}
+
 .recipe-list-container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  width: 55%
+  width: 600px
+}
+
+.saved-recipes-list {
+  width : 300px
 }
 
 .individual-recipe {
@@ -38,7 +51,10 @@ img {
   padding: 2px;
   background-color:rgb(244, 236, 241);
   border-radius: 15pt;
-  margin: 10px
+  margin: 10px;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 7px 7px #ef7fda;
 }
 
 select {
@@ -63,7 +79,7 @@ select {
   border-radius: 15px;
   border: 1px solid;
   padding: 10px;
-  box-shadow: 5px 10px #ef7fda;
+  box-shadow: 7px 7px #ef7fda;
   
 }
 
@@ -77,8 +93,19 @@ h4 {
   font-weight: bold;
 }
 
-.youtube-link {
- margin-left: 36%;
+.button-in-detail {
  font-size: 18px;
+ background-color: #ef7fda;
+ border: 2px solid darkmagenta;
+ border-radius: 5px;
+ color: white;
+ padding: 1px;
+ text-decoration: none;
+ font-family:Georgia, 'Times New Roman', Times, serif;
+ margin-left:40%
+}
 
+.button-in-detail :hover {
+  color: darkmagenta;
+  background-color: white;
 }

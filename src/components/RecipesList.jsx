@@ -11,7 +11,10 @@ const RecipesList = ({recipes}) => {
 
     return (
         <>
+        <div className = 'recipe-list-container'>
+        <h3>All Recipes</h3>
         {recipesList}
+        </div>
         </>
     )
 

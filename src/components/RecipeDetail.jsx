@@ -1,6 +1,5 @@
 
-const RecipeDetail = ({selectedRecipe}) => {
-    console.log(selectedRecipe)
+const RecipeDetail = ({selectedRecipe, addToSavedRecipes}) => {
     
     if(!selectedRecipe) return <></>
     
@@ -32,7 +31,10 @@ const RecipeDetail = ({selectedRecipe}) => {
             </ul>
             <p className = 'recipe-card-title'>Recipe:</p>
             <p>{selectedRecipe.strInstructions}</p>
-            <a className = 'youtube-link' href={selectedRecipe.strYoutube}>YouTube Tutorial</a>
+            <a className = 'button-in-detail' href={selectedRecipe.strYoutube}>YouTube Tutorial</a>
+            <p>
+            <button className = 'button-in-detail' onClick={() => addToSavedRecipes(selectedRecipe)}>Add To Saved Recipes</button>
+            </p>
 
         </div>
     )
