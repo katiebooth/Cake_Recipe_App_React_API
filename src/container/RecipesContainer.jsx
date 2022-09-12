@@ -11,7 +11,7 @@ const RecipesContainer = () => {
         const savedRecipesJSON = localStorage.getItem('saved recipes list')
         console.log(savedRecipesJSON)
         if (savedRecipesJSON == null) {
-            return [{'strName': 'chocolate cake'}]}
+            return []}
         else {
             return JSON.parse(savedRecipesJSON)}
     })
