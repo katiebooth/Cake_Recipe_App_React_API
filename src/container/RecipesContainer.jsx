@@ -7,8 +7,14 @@ import SavedRecipeList from "../components/SavedRecipeList"
 const RecipesContainer = () => {
     const [recipes, setRecipes] = useState([])
     const [selectedRecipe, setSelectedRecipe] = useState('')
-    const [savedRecipes, setSavedRecipes] = useState('')
-    const [savedRecipesInStorage, setSavedRecipesInStorage] = useState('')
+    const [savedRecipes, setSavedRecipes] = useState(()=>{
+        const savedRecipesJSON = localStorage.getItem('saved recipes list')
+        console.log(savedRecipesJSON)
+        if (savedRecipesJSON == null) {
+            return [{'strName': 'chocolate cake'}]}
+        else {
+            return JSON.parse(savedRecipesJSON)}
+    })
 
     useEffect(() => {
         getRecipes()
@@ -30,12 +36,9 @@ const RecipesContainer = () => {
         setSavedRecipes(copySavedRecipes)
     }
 
+    useEffect(()=> {
     localStorage.setItem('saved recipes list', JSON.stringify(savedRecipes))
-
-    useEffect(()=>{
-        const savedRecipesInStorage = JSON.parse(localStorage.getItem('saved recipes list'))
-        if (savedRecipesInStorage !== null) setSavedRecipesInStorage(savedRecipesInStorage)
-    }, [])
+    }, [savedRecipes])
 
     // console.log(savedRecipesInStorage)
     // console.log(savedRecipes)
@@ -49,7 +52,7 @@ const RecipesContainer = () => {
         </div>
         <div className = 'recipes-container'>
         {recipes ? <RecipesList recipes ={recipes} onRecipeSelected = {onRecipeSelected} addToSavedRecipes = {addToSavedRecipes}/> : null}
-        <SavedRecipeList savedRecipes = {savedRecipes} savedRecipesInStorage = {savedRecipesInStorage}/>
+        <SavedRecipeList savedRecipes = {savedRecipes}/>
         </div>
         </>
     )
