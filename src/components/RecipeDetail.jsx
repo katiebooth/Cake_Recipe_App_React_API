@@ -1,6 +1,9 @@
+import { useParams } from "react-router-dom"
 
-const RecipeDetail = ({selectedRecipe, addToSavedRecipes}) => {
-    
+const RecipeDetail = ({selectedRecipe, addToSavedRecipes,getRecipeGivenId }) => {
+    // const {id}  = useParams()
+    // const selectedRecipe = getRecipeGivenId(Number(id))
+
     if(!selectedRecipe) return <></>
 
     const recipeIngrientsAndMesurementsListElements = []
@@ -11,6 +14,7 @@ const RecipeDetail = ({selectedRecipe, addToSavedRecipes}) => {
             )
         }
     }
+
     
     return (
         <div className = 'selected-recipe'>

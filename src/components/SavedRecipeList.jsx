@@ -1,6 +1,6 @@
 import SavedRecipe from "./SavedRecipe"
 
-const SavedRecipeList = ({savedRecipes}) => {
+const SavedRecipeList = ({savedRecipes, removeFromSavedRecipes}) => {
 
     if(!savedRecipes) {
         return (
@@ -11,7 +11,7 @@ const SavedRecipeList = ({savedRecipes}) => {
     }
 
     const savedRecipesList = savedRecipes.map((recipe, index) =>{
-        return <SavedRecipe recipe={recipe} key={index}/>
+        return <SavedRecipe recipe={recipe} removeFromSavedRecipes = {removeFromSavedRecipes} key={index}/>
     })
 
     // console.log(savedRecipesList)

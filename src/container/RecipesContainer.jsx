@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+// import { Link } from "react-router-dom"
 import RecipesList from "../components/RecipesList"
 import RecipeSelector from "../components/RecipeSelector"
 import RecipeDetail from "../components/RecipeDetail"
@@ -36,6 +37,17 @@ const RecipesContainer = () => {
         setSavedRecipes(copySavedRecipes)
     }
 
+    const removeFromSavedRecipes = (selectedRecipe) => {
+        const copySavedRecipes = [...savedRecipes]
+        const index = copySavedRecipes.indexOf(selectedRecipe)
+        copySavedRecipes.splice(index, 1)
+        setSavedRecipes(copySavedRecipes)
+    }
+
+    const getRecipeGivenId = (selectedRecipeId) => {
+        return recipes.find((recipe) => recipe.idMeal === selectedRecipeId)
+    }
+
     useEffect(()=> {
     localStorage.setItem('saved recipes list', JSON.stringify(savedRecipes))
     }, [savedRecipes])
@@ -45,14 +57,16 @@ const RecipesContainer = () => {
 
     return (
         <>
+        <h1>The Sweet Life</h1>
+        <h2>Cake Recipes To Satisfy Your Cravings</h2>
         <RecipeSelector recipes={recipes} onRecipeSelected={onRecipeSelected} />
         <hr></hr>
-        <div>
-        {selectedRecipe ? <RecipeDetail selectedRecipe = {selectedRecipe} addToSavedRecipes = {addToSavedRecipes}/> :null}
-        </div>
+        {/* <div>
+        {selectedRecipe ? <RecipeDetail selectedRecipe = {selectedRecipe} addToSavedRecipes = {addToSavedRecipes} getRecipeGivenId={getRecipeGivenId}/> :null}
+        </div> */}
         <div className = 'recipes-container'>
         {recipes ? <RecipesList recipes ={recipes} onRecipeSelected = {onRecipeSelected} addToSavedRecipes = {addToSavedRecipes}/> : null}
-        <SavedRecipeList savedRecipes = {savedRecipes}/>
+        <SavedRecipeList savedRecipes = {savedRecipes} removeFromSavedRecipes ={removeFromSavedRecipes}/>
         </div>
         </>
     )

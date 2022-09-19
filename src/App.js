@@ -1,16 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
 import RecipesContainer from './container/RecipesContainer';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import NavBar from './components/NavBar';
+import ErrorPage from './components/ErrorPage';
+import RecipeDetail from './components/RecipeDetail';
+import About from './components/About';
 
 function App() {
   return (
-    <>
-  <h1>The Sweet Life</h1>
-  <h2>Cake Recipes To Satisfy Your Cravings</h2>
-  <div className ='recipes-container'>
-  <RecipesContainer/>
-  </div>
-  </>
+    <Router>
+    <NavBar/>
+    <Routes>
+        <Route path = '/' element={<RecipesContainer/>}/>
+        <Route path = '/about' element={<About/>}/>
+        {/* <Route path= "/displayrecipe/:id" element={<RecipeDetail/>}/> */}
+        <Route path = '*' element={<ErrorPage/>}/>
+    </Routes>
+    </Router>
   );
 }
 

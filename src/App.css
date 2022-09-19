@@ -6,6 +6,29 @@ body {
   font-family:Georgia, 'Times New Roman', Times, serif
 }
 
+.nav-bar-style {
+  width :100%;
+  display: flex;
+  align-items: left;
+  background-color: hotpink;
+  padding: 0.5em;
+}
+
+.nav-bar-list-style {
+  list-style-type : none;
+}
+
+.nav-bar-link-style {
+  text-decoration : none;
+  margin-left: 20px;
+  color: white;
+  font-size: 14pt;
+}
+
+.nav-bar-link-style:hover {
+  color:darkmagenta
+}
+
 h1 {
   text-align: center;
   font-size: 32pt;
@@ -18,6 +41,17 @@ h2 {
 h3 {
   width: 570px;
   text-align: center;
+}
+
+.about-page {
+  width : 500px;
+  background-color:rgb(244, 236, 241);
+  border-radius: 15pt;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid;
+  padding: 30px;
+  box-shadow: 7px 7px #ef7fda;
 }
 
 img {
@@ -84,7 +118,7 @@ select {
   color: white;
   width: 60%;
   height: 25px;
-  margin: 0 410px;
+  margin: 0 320px;
   text-align: center;
   font-family:Georgia, 'Times New Roman', Times, serif;
   font-size: 13pt;
@@ -147,3 +181,16 @@ h4 {
   color: darkmagenta;
   background-color: white;
 }
+
+.saved-recipe-list {
+  padding: 7px;
+}
+
+.saved-recipe-list > a {
+  margin-bottom: 5px;
+}
+
+.saved-recipe-list > button {
+  margin-top: 7px;
+}
+
