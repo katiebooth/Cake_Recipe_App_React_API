@@ -1,7 +1,7 @@
 # Cake Recipe App Using React and API
 
 ## Project Brief
-I created this app as one of my weekend assignments while studying at CodeClan after a couple of weeks of learning Javascript. The project brief was to use an external API to display some information for the user to interact with. I used a recipe API and focussed on cake recipes, so as only to call the API once. 
+I created this app as one of my weekend assignments while studying at CodeClan after a couple of weeks of learning Javascript. The project brief was to use an external API to display some information for the user to interact with. I used a recipe API and focussed on cake recipes. 
 
 ## Technologies Used
 This app is written in Javascript and uses the React framework.
