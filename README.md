@@ -10,6 +10,15 @@ This app is written in Javascript and uses the React framework.
 The homepage displays a list of available recipes fetched by the API. The user can either select a recipe from the dropdown list or click on the icon to display the recipe. The user can add the recipe to their favourites, which is saved in local storage. 
 The app also uses routing to display an "About" page.
 
+## Screenshots
+
+Homepage:
+
+![482BEC2D-AFC9-4216-83BA-87C66F4CEA60](https://user-images.githubusercontent.com/107416924/194509699-f73d8f71-ff7e-413e-8022-13f5011ff2a6.jpeg)
+
+Selected Recipe Details:
+![43345483-EE79-437D-B430-BB4E83F64D6A](https://user-images.githubusercontent.com/107416924/194509737-bc590b8a-1236-498f-b6fd-2e5bb4d84ce5.jpeg)
+
 
 ## Available Scripts
 
@@ -23,22 +32,5 @@ This will install any required dependencies.
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 
