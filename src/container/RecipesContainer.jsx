@@ -10,7 +10,6 @@ const RecipesContainer = () => {
     const [selectedRecipe, setSelectedRecipe] = useState('')
     const [savedRecipes, setSavedRecipes] = useState(()=>{
         const savedRecipesJSON = localStorage.getItem('saved recipes list')
-        console.log(savedRecipesJSON)
         if (savedRecipesJSON == null) {
             return []}
         else {
@@ -61,9 +60,9 @@ const RecipesContainer = () => {
         <h2>Cake Recipes To Satisfy Your Cravings</h2>
         <RecipeSelector recipes={recipes} onRecipeSelected={onRecipeSelected} />
         <hr></hr>
-        {/* <div>
+        <div>
         {selectedRecipe ? <RecipeDetail selectedRecipe = {selectedRecipe} addToSavedRecipes = {addToSavedRecipes} getRecipeGivenId={getRecipeGivenId}/> :null}
-        </div> */}
+        </div>
         <div className = 'recipes-container'>
         {recipes ? <RecipesList recipes ={recipes} onRecipeSelected = {onRecipeSelected} addToSavedRecipes = {addToSavedRecipes}/> : null}
         <SavedRecipeList savedRecipes = {savedRecipes} removeFromSavedRecipes ={removeFromSavedRecipes}/>
